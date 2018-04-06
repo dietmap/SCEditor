@@ -2488,18 +2488,18 @@ export default function SCEditor(original, userOptions) {
 		// stop checking.
 		dom.rTraverse(wysiwygBody, function (node) {
 			// Last block, add new line after if has styling
-			if (node.nodeType === dom.ELEMENT_NODE &&
-				!/inline/.test(dom.css(node, 'display'))) {
-
-				// Add line break after if has styling
-				if (!dom.is(node, '.sceditor-nlf') && dom.hasStyling(node)) {
-					var paragraph = dom.createElement('p', {}, wysiwygDocument);
-					paragraph.className = 'sceditor-nlf';
-					paragraph.innerHTML = !IE_BR_FIX ? '<br />' : '';
-					dom.appendChild(wysiwygBody, paragraph);
-					return false;
-				}
-			}
+			// if (node.nodeType === dom.ELEMENT_NODE &&
+			// 	!/inline/.test(dom.css(node, 'display'))) {
+      //
+			// 	// Add line break after if has styling
+			// 	if (!dom.is(node, '.sceditor-nlf') && dom.hasStyling(node)) {
+			// 		var paragraph = dom.createElement('p', {}, wysiwygDocument);
+			// 		paragraph.className = 'sceditor-nlf';
+			// 		paragraph.innerHTML = !IE_BR_FIX ? '<br />' : '';
+			// 		dom.appendChild(wysiwygBody, paragraph);
+			// 		return false;
+			// 	}
+			// }
 
 			// Last non-empty text node or line break.
 			// No need to add line-break after them
